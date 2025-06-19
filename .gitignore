@@ -1,3 +1,9 @@
+# Generated folders
+YOLOX/
+train/
+validation/
+convert_voc_to_coco/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

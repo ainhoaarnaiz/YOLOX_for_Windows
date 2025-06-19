@@ -23,9 +23,9 @@ class Exp(MyExp):
         self.enable_mixup = False
 
         # Define yourself dataset path
-        self.data_dir = "/content/dataset/images"
-        self.train_ann = "/content/dataset/annotations/train_annotations.json"
-        self.val_ann = "/content/dataset/annotations/validation_annotations.json"
+        self.data_dir = "./dataset"
+        self.train_ann = "train_annotations.json"
+        self.val_ann = "validation_annotations.json"
 
         self.num_classes = 1
 
