@@ -37,4 +37,4 @@ conda activate yolox_env
 
 ## Usage
 
-**Follow all the steps** on the YOLOX_traing.ipynb to train (select yolox_env as kernel) and understand how YOLOX works. Then, modify the file(s) to train with your custom dataset and model choice.
+**INPORTANT:** Follow all the steps on the **YOLOX_traing.ipynb** to train (select yolox_env as kernel) and understand how YOLOX works. Then, modify the file(s) to train with your custom dataset and model choice.
