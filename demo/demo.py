@@ -18,11 +18,11 @@ from yolox.utils import fuse_model, get_model_info, postprocess, vis
 
 IMAGE_EXT = [".jpg", ".jpeg", ".webp", ".bmp", ".png"]
 
-def load_class_names(path="classes.txt"):
+def load_class_names(path="class_names.txt"):
     with open(path, "r") as f:
         return [line.strip() for line in f.readlines()]
 
-CUSTOM_CLASSES = load_class_names("classes.txt")
+CUSTOM_CLASSES = load_class_names("class_names.txt")
 
 def make_parser():
     parser = argparse.ArgumentParser("YOLOX Demo!")

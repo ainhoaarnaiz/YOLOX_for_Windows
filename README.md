@@ -68,10 +68,11 @@ pip install fastai
 
 ### IMPORTANT
 
-Make sure to also install the correct Numpy version:
+Make sure to also install the correct Numpy version (and compatible opencv):
 ```bash
 pip uninstall numpy -y
 pip install numpy==1.26.4
+pip install opencv-python==4.7.0.72
 ```
 
 Double check the correct torch is also still installed:
@@ -92,9 +93,11 @@ pip install matplotlib
 pip install --upgrade matplotlib
 ```
 
-Finally, install the correct setuptools:
+Finally, install the correct setuptools and cython:
 ```bash
 pip install setuptools==58.0.4
+pip uninstall cython
+pip install cython==0.29.36
 ```
 
 To check if everything is correctly installed you can do:
