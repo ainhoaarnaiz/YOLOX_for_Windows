@@ -114,4 +114,4 @@ thinc 8.3.6 has requirement numpy<3.0.0,>=2.0.0, but you have numpy 1.26.4.
 
 ## Usage
 
-**INPORTANT:** Follow the steps on the **demo/YOLOX_traing_simplified.ipynb** to train (select yolox_env as kernel) and understand how YOLOX works. Then, modify the file(s) to train with your custom dataset and model choice.
+**INPORTANT:** Follow the steps on the **demo/01_YOLOX_training_simplified.ipynb** to train (select yolox_env as kernel) and understand how YOLOX works. Then, modify the file(s) to train with your custom dataset and model choice.
