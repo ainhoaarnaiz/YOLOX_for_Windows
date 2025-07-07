@@ -102,11 +102,16 @@ def main():
 
     if not args.no_onnxsim:
         import onnx
+
         from onnxsim import simplify
 
-        # use onnx-simplifier to reduce reduent model.
+        input_shapes = {args.input: list(dummy_input.shape)} if args.dynamic else None
+
+        # use onnxsimplify to reduce reduent model.
         onnx_model = onnx.load(args.output_name)
-        model_simp, check = simplify(onnx_model)
+        model_simp, check = simplify(onnx_model,
+                                     dynamic_input_shape=args.dynamic,
+                                     input_shapes=input_shapes)
         assert check, "Simplified ONNX model could not be validated"
         onnx.save(model_simp, args.output_name)
         logger.info("generated simplified onnx model named {}".format(args.output_name))
