@@ -106,7 +106,7 @@ pip check
 ```
 And the output should be something similar to this:
 ```bash
-thinc 8.3.6 has requirement numpy<3.0.0,>=2.0.0, but you have numpy 1.26.4.
+thinc 8.3.6 has requirement numpy<3.0.0,>=2.0.0, but you have numpy 1.24.3.
 ```
 
 ---
