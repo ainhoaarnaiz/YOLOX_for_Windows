@@ -3,10 +3,8 @@
 
 # user experiments directory
 YOLOX_outputs/
-datasets/
-custom/
 yolox_eval/
-
+onnx_models/
 detected_source_video.mp4
 
 # do not ignore datasets under yolox/data

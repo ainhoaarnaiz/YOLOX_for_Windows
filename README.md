@@ -2,6 +2,8 @@
 
 # YOLOX for Windows
 
+Partially based on the implementation done in: https://github.com/Kazuhito00/YOLOX-Colaboratory-Training-Sample
+
 ## Installation
 
 ### Install Visual Studio Build Tools 2019
@@ -20,98 +22,32 @@ Once the installation is complete, **restart your computer**.
 **Note (not tested):** If you have the latest CUDA (as per May 2025), try installing **Visual Studio Build Tools 2022** and its **“Desktop development with C++"** workload (with MSVC v143 and Windows 11 SDK).
 
 ---
-
-### Create Conda Environment
-
-```bash
-conda create -n yolox_env python=3.10
-conda activate yolox_env
-```
-
----
 ### YOLOX Installation
 
-Clone this repo:
+First, clone this repo:
 
 ```bash
 git clone https://github.com/ainhoaarnaiz/YOLOX_for_Windows.git
 cd YOLOX_for_Windows
 ```
 
-Install the dependencies (change the CUDA version to yours):
+Next, check environment.yml and make sure you use the correct URL index for your CUDA version. Then run:
 
 ```bash
-pip install torch==2.3.0+cu118 torchvision==0.18.0+cu118 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118
-python -m pip install -U pip
-pip install -U pip setuptools wheel
-pip install -U opencv-python cython
-conda install -c conda-forge cmake
-conda install -c conda-forge protobuf
+conda env create -f environment.yml
+conda activate yolox_env
 ```
 
-And then run:
-```bash
-pip install -r requirements.txt
-```
+Then, install yolox 0.3.0 but skip its (old) dependency pins:
 
-Install YOLOX:
 ```bash
-pip install -v -e .  
-```
-
-### fast.ai Installation (Optional)
-
-Install fast.ai using pip:
-```bash
-pip install fastai
-```
-
-### IMPORTANT
-
-Make sure to also install the correct Numpy version (and compatible opencv):
-```bash
-pip uninstall numpy -y
-pip install numpy==1.26.4
-pip install opencv-python==4.7.0.72
-```
-
-Double check the correct torch is also still installed:
-```bash
-pip install torch==2.3.0+cu118 torchvision==0.18.0+cu118 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118
-```
-
-Make sure to install the correct pycocotools version:
-```bash
-pip uninstall pycocotools -y
-conda install pycocotools -c conda-forge
-```
-
-And matplotlib version:
-```bash
-pip uninstall matplotlib -y
-pip install matplotlib
-pip install --upgrade matplotlib
-```
-
-Finally, install the correct setuptools and cython:
-```bash
-pip install setuptools==58.0.4
-pip uninstall cython
-pip install cython==0.29.36
-```
-
-To check if everything is correctly installed you can do:
-```bash
-pip check
-```
-And the output should be something similar to this:
-```bash
-thinc 8.3.6 has requirement numpy<3.0.0,>=2.0.0, but you have numpy 1.24.3.
+pip install yolox==0.3.0 --no-deps
 ```
 
 ---
 
-
 ## Usage
 
-**INPORTANT:** Follow the steps on the **demo/01_YOLOX_training_simplified.ipynb** to train (select yolox_env as kernel) and understand how YOLOX works. Then, modify the file(s) to train with your custom dataset and model choice.
+Follow the steps on the **01_YOLOX_training_simplified.ipynb** to train (select yolox_env as kernel) and understand how YOLOX works with the given fish dataset. Then, modify the files to train with your custom dataset and your model choice.
+
+**IMPORTANT**: Look for this line `local_cache = r"C:\Users\aarnaizl\AppData\Local\torch_extensions"` in all the .ipynb and change it with your local cache directory.
